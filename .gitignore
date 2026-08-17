@@ -1,0 +1,4 @@
+# Local source files used to maintain the public site.
+# The generated PDF is published, while editable source stays private.
+Resume_Shihao.tex
+publications.bib

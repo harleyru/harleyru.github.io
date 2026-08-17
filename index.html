@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <meta
+      name="description"
+      content="QuantRu is Shihao Ru's research home for solid-state quantum systems, quantum sensing, photonic quantum information and instrumentation."
+    />
+    <meta property="og:title" content="QuantRu — Shihao Ru" />
+    <meta property="og:description" content="Solid-state quantum physics, sensing and photonic information." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quantru.org/" />
+    <title>QuantRu — Shihao Ru</title>
+    <link rel="canonical" href="https://quantru.org/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" />
+    <link rel="stylesheet" href="styles.css?v=20260817-49" />
+    <script src="script.js?v=20260817-49" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="RuSH Quantum home"><span class="brand-mark"><span class="bk-prompt">❯ </span><span class="bk-br">⟨</span>Ru<span class="bk-bar" aria-hidden="true"></span><span class="bk-sh">SH</span><span class="bk-br">⟩</span><span class="bk-cursor" aria-hidden="true"></span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#research">research</a>
+          <a href="publications.html">publications</a>
+          <a href="#projects">projects</a>
+          <a href="#contact">contact</a>
+          <a href="Resume_Shihao.pdf" target="_blank" rel="noreferrer">CV ↓</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">dark</button>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="side-nav" aria-label="Section navigation">
+      <a href="#research" data-spy="research">research</a>
+      <a href="publications.html">publications</a>
+      <a href="#projects" data-spy="projects">projects</a>
+      <a href="#contact" data-spy="contact">contact</a>
+    </nav>
+
+    <main id="main" class="page-shell">
+      <section id="top" class="hero reveal">
+        <div class="hero-copy">
+          <div class="term-window" aria-label="About">
+            <div class="term-bar" aria-hidden="true">
+              <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+              <span class="term-title">shihao@quantru: ~</span>
+            </div>
+            <div class="term-body">
+              <p class="prompt">⟨ψ| whoami</p>
+              <h1>Shihao Ru</h1>
+              <p class="role-line">quantum sensing · AI for quantum measurement<span aria-hidden="true">█</span></p>
+              <p class="term-line">research fellow · <a href="https://www.ntu.edu.sg/" target="_blank" rel="noreferrer">school of electrical and electronic engineering, NTU</a></p>
+              <p class="term-line">spin defects · quantum sensing · hybrid systems · photonic quantum information · instrumentation</p>
+              <nav class="quick-links" aria-label="Profile links">
+                <a href="#research">research</a>
+                <a href="#projects">projects</a>
+                <a href="Resume_Shihao.pdf" target="_blank" rel="noreferrer">CV ↓</a>
+                <a href="https://github.com/harleyru" target="_blank" rel="noreferrer">github</a>
+                <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&hl=en" target="_blank" rel="noreferrer">scholar</a>
+              </nav>
+              <p class="prompt term-wait"><span aria-hidden="true">⟨ψ|</span> <span class="term-cursor" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+        <aside class="topic-field" aria-label="Research topics">
+          <div class="term-window">
+            <div class="term-bar" aria-hidden="true">
+              <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+              <span class="term-title">quantru: ~/topics</span>
+            </div>
+            <div class="term-body">
+              <p class="prompt">⟨ψ| topics --field</p>
+              <div class="topic-cloud">
+            <span class="topic-md">microwave cavities</span>
+            <span class="topic-md">measurement</span>
+            <span class="topic-sm">photonics</span>
+            <span class="topic-lg">quantum</span>
+            <span class="topic-sm">hBN</span>
+            <span class="topic-xl">spin defects</span>
+            <span class="topic-xl">quantum sensing</span>
+            <span class="topic-sm">control</span>
+            <span class="topic-lg">hybrid systems</span>
+            <span class="topic-xs">cryogenics</span>
+            <span class="topic-md">electrical readout</span>
+            <span class="topic-sm">entanglement</span>
+            <span class="topic-lg">AI + FPGA</span>
+            <span class="topic-xs">FPGA</span>
+            <span class="topic-md">NV centers</span>
+            <span class="topic-sm">nonlocality</span>
+              </div>
+              <p class="term-line">↑ a field of research topics</p>
+              <p class="term-line term-stats">// 16 keywords · 5 research areas · drifting</p>
+              <p class="prompt term-wait"><span aria-hidden="true">⟨ψ|</span> <span class="term-cursor" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </aside>
+        <div class="hero-status" aria-label="Status">
+          <span class="status-user">shihao@quantru:~/research</span>
+          <span class="status-tags">quantum sensing · AI for measurement · NTU</span>
+        </div>
+      </section>
+
+      <section id="research" class="terminal-section reveal">
+        <p class="prompt">⟨ψ| research</p>
+        <div class="terminal-rule" aria-hidden="true"></div>
+        <h2>What I'm working on</h2>
+        <ul class="focus-list">
+          <li class="focus-featured">
+            <span aria-hidden="true">▍</span>
+            <div>
+              <p class="focus-tag">#spin-defects</p>
+              <h3>Quantum sensing</h3>
+              <p>Spin defects in hBN and NV centers in diamond, driven optically and by microwaves, read out electrically — for magnetic-field and nanoscale sensing.</p>
+              <p class="focus-links"><a href="publications.html#pub-sensing">readout PRL</a> · <a href="publications.html#pub-sensing">hBN polarization</a> · <a href="publications.html#pub-sensing">wide-field magnetometry</a></p>
+            </div>
+          </li>
+          <li>
+            <span aria-hidden="true">▍</span>
+            <div>
+              <p class="focus-tag">#hybrid-systems</p>
+              <h3>Hybrid quantum systems</h3>
+              <p>Strong coupling between solid-state spin defects and microwave cavities, connecting long-lived spin states with microwave photons.</p>
+              <p class="focus-links"><a href="index.html#projects">project: spin-readout</a></p>
+            </div>
+          </li>
+          <li>
+            <span aria-hidden="true">▍</span>
+            <div>
+              <p class="focus-tag">#photonic-info</p>
+              <h3>Photonic quantum information</h3>
+              <p>Single-photon experiments — high-dimensional gates, multi-photon entanglement, teleportation, nonlocality, and contextuality.</p>
+              <p class="focus-links"><a href="publications.html#pub-info">SPDC papers</a></p>
+            </div>
+          </li>
+          <li>
+            <span aria-hidden="true">▍</span>
+            <div>
+              <p class="focus-tag">#instrumentation</p>
+              <h3>AI + FPGA for quantum measurement</h3>
+              <p>FPGA hardware for deterministic timing and real-time signal processing, with AI-assisted experiment control.</p>
+              <p class="focus-links"><a href="index.html#projects">project: ai-fpga-control</a></p>
+            </div>
+          </li>
+        </ul>
+        <blockquote>
+          The aim is to move cleanly from a quantum mechanism to a measurement protocol—and
+          from that protocol to an instrument that works outside a single demonstration.
+        </blockquote>
+      </section>
+
+      <section id="publications" class="terminal-section reveal">
+        <p class="prompt">⟨ψ| scholar --author="Shihao Ru" --recent</p>
+        <div class="terminal-rule" aria-hidden="true"></div>
+        <div class="section-title-row">
+          <h2>Latest papers</h2>
+          <a href="publications.html">view all ↗</a>
+        </div>
+        <ol class="latest-list">
+          <li>
+            <time>2026</time>
+            <div>
+              <a class="paper-title" href="https://arxiv.org/abs/2606.07899" target="_blank" rel="noreferrer">All-Optical Wide-Field Magnetometry with Van Der Waals Quantum Sensor</a>
+              <p>F. Zhou, P. Ma, J. Li, K. Jing, <strong>S. Ru</strong>, et al. · arXiv:2606.07899</p>
+            </div>
+          </li>
+          <li>
+            <time>2025</time>
+            <div>
+              <a class="paper-title" href="https://doi.org/10.1103/dlzw-dhsr" target="_blank" rel="noreferrer">Room-Temperature Electrical Readout of Spin Defects in van der Waals Materials</a>
+              <p><strong>S. Ru</strong>, L. An, H. Liang, Z. Jiang, Z. Li, et al. · Phys. Rev. Lett. 135, 220802</p>
+            </div>
+          </li>
+          <li>
+            <time>2025</time>
+            <div>
+              <a class="paper-title" href="https://doi.org/10.1038/s41467-025-59691-5" target="_blank" rel="noreferrer">Observation of Ferromagnetic Phase in the Second Moiré Band of Twisted MoTe₂</a>
+              <p>L. An, H. Pan, W.-X. Qiu, N. Wang, <strong>S. Ru</strong>, et al. · Nat. Commun. 16, 5131</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects" class="terminal-section reveal">
+        <p class="prompt">⟨ψ| ls ./projects</p>
+        <div class="terminal-rule" aria-hidden="true"></div>
+        <h2>Active projects</h2>
+        <div class="project-list">
+          <article class="project-row">
+            <div class="project-meta">
+              <div class="project-heading"><code>spin-readout</code><span>active</span></div>
+            </div>
+            <p class="project-desc">Electrical and microwave readout and coherent control of nitrogen-vacancy (NV) centers in diamond and single-photon emitters (SPEs) in two-dimensional materials. We study strong coupling between solid-state defects and microwave cavities, including superconducting resonators.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-meta">
+              <div class="project-heading"><code>compact-magnetometry</code><span>current</span></div>
+            </div>
+            <p class="project-desc">We develop compact and microscale quantum magnetometers, from portable sensing modules to chip-scale devices with integrated optical, microwave, and electrical control.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-meta">
+              <div class="project-heading"><code>low-temperature-quantum-matter</code><span>research</span></div>
+            </div>
+            <p class="project-desc">We study correlated phases and collective excitations in moiré materials at cryogenic temperatures, including <a href="https://arxiv.org/abs/2512.18217" target="_blank" rel="noreferrer">electronic phonons in WS₂/WSe₂ electron crystals ↗</a> and <a href="https://www.nature.com/articles/s41467-025-59691-5" target="_blank" rel="noreferrer">gate-tunable ferromagnetism in the second moiré band of twisted MoTe₂ ↗</a>.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-meta">
+              <div class="project-heading"><code>ai-fpga-control</code><span>building</span></div>
+            </div>
+            <p class="project-desc">An integrated control stack for planning experiments, coordinating instruments, and executing low-latency quantum measurement loops.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="terminal-section contact reveal">
+        <p class="prompt">⟨ψ| contact</p>
+        <div class="terminal-rule" aria-hidden="true"></div>
+        <h2>Let's talk.</h2>
+        <p>
+          Ask me about solid-state spin systems, quantum sensing, hybrid quantum networks,
+          photonic experiments, or scientific instrumentation.
+        </p>
+        <a class="email" data-mail href="#contact">shihao.ru.2018 at gmail.com<span aria-hidden="true">▍</span></a>
+        <p class="address">
+          School of Electrical and Electronic Engineering · Nanyang Technological University<br />
+          21 Nanyang Link, Singapore 637371
+        </p>
+        <nav class="social-links" aria-label="Social links">
+          <a href="https://github.com/harleyru" target="_blank" rel="noreferrer">github</a>
+          <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&hl=en" target="_blank" rel="noreferrer">google scholar</a>
+          <a href="https://orcid.org/0000-0002-5119-0452" target="_blank" rel="noreferrer">orcid</a>
+          <a href="https://www.researchgate.net/profile/Shihao-Ru" target="_blank" rel="noreferrer">researchgate</a>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-logout">⟨ψ| logout<span aria-hidden="true">▍</span></p>
+        <p class="footer-end">session ended · solid-state quantum physics, sensing, and information.</p>
+        <p class="footer-links"><a data-mail href="#contact">email</a> · <a href="https://github.com/harleyru">github</a> · <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&hl=en">scholar</a> · <a href="Resume_Shihao.pdf">cv</a></p>
+        <p class="copyright">© <span data-year></span> ⟨Ru|SH⟩</p>
+      </div>
+      <a href="#top">↑ top</a>
+    </footer>
+  </body>
+</html>
