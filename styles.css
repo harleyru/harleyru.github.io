@@ -376,6 +376,8 @@ blockquote {
 .pub-toc a { color: var(--blue); }
 .pub-toc a::before { content: "# "; color: var(--muted); }
 .pub-toc a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.blog-empty { margin: 0 0 0.4rem; color: var(--muted); font-family: var(--mono); font-size: 0.76rem; }
+.blog-note { margin: 0; color: var(--muted); opacity: 0.82; font-size: 0.8rem; }
 .latest-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .latest-list li { display: grid; grid-template-columns: 58px 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
 .latest-list time { padding-top: 0.08rem; color: var(--blue); font-family: var(--mono); font-size: 0.7rem; }
