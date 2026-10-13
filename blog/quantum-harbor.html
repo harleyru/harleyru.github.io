@@ -66,7 +66,8 @@
         </header>
 
         <div class="post-prose">
-          <p>A calibration only becomes useful when it survives another measurement. An AI agent working on a quantum experiment faces the same demand: choose what to measure, interpret noisy observations, and leave enough evidence for someone else to check the result. This is the problem we set out to study with Quantum-Harbor.</p>
+          <p>Imagine returning to the lab after an automated calibration has run overnight. The agent reports that the task is complete. To use its settings in the next experiment, you need to know which measurements it made, how it interpreted them, and whether the result holds up on fresh data.</p>
+          <p>This is the problem we set out to study with Quantum-Harbor. We use <em>verified autonomy</em> to describe an agent completing a task with conclusions supported by evidence collected during its run.</p>
         </div>
 
         <figure class="post-figure">
@@ -79,7 +80,13 @@
         <section class="post-prose" aria-labelledby="verification">
           <h2 id="verification">A lab with an independent verifier</h2>
           <p>Quantum-Harbor separates the agent, the experimental backend, and the verifier. The agent can write code and use public experimental interfaces. A separate service holds the hidden device configuration and records the experiments. The verifier checks submitted conclusions against those records; calibration and design tasks can also be tested on fresh hidden data. The <a href="https://gauge-forge.com/qiqc/harbor">architecture page</a> explains this separation.</p>
-          <p>For an experimentalist, this is a useful way to specify a handover: the settings used, the observations collected, and the check that makes a result worth trusting. Each part should remain inspectable after the agent has stopped.</p>
+          <p>Within a limited experimental budget, the agent has to work through a familiar sequence:</p>
+          <ol>
+            <li>Choose a measurement that can resolve the current uncertainty.</li>
+            <li>Interpret the observations and check the assumptions behind the analysis.</li>
+            <li>Decide whether another experiment is worth its cost.</li>
+            <li>Stop and submit a result that the recorded evidence supports.</li>
+          </ol>
         </section>
 
         <figure class="post-figure">
@@ -92,10 +99,24 @@
         <section class="post-prose" aria-labelledby="benchmark">
           <h2 id="benchmark">What we measured</h2>
           <p><a href="https://gauge-forge.com/qiqc">QIQCBench</a> contains 49 tasks across six domains. There are 39 pass–fail tasks, seven racing tasks scored separately, and three infrastructure checks excluded from science scores. The evaluation compares 17 complete agentic systems, including their execution harnesses.</p>
-          <p>On the pass–fail tasks, the <a href="https://arxiv.org/html/2609.17439v1#S2.SS4">paper reports success rates of 3%–78%</a>. Each system gets three attempts per task, giving 117 scored trials, with a three-hour limit per attempt. These results measure performance in simulated environments; they do not establish reliable autonomy on physical hardware.</p>
-          <h3>A task where old notes are not enough</h3>
+          <p>On the pass–fail tasks, the <a href="https://arxiv.org/html/2609.17439v1#S2.SS4">paper reports success rates of 3%–78%</a>. Each system gets three attempts per task, giving 117 scored trials per system, with a three-hour limit per attempt. These results measure performance in simulated environments; they do not establish reliable autonomy on physical hardware.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="cases">
+          <h2 id="cases">Two experimental decisions</h2>
+          <h3>When a previous calibration stops applying</h3>
           <p>One <a href="https://gauge-forge.com/qiqc/case-study">case study</a> involves a logical CNOT implemented through lattice surgery. The notebook records measurements on separate code patches and recommends reusing the decoder calibration. Merging the patches introduces correlated errors at their boundary. To succeed, the agent needs to measure the merged configuration and update the decoder using the new evidence.</p>
           <p>The practical difficulty is deciding when a familiar procedure has stopped being adequate. In a lab, yesterday's working settings are a starting point. Their validity has to be checked under today's conditions.</p>
+          <h3>Where to spend a measurement budget</h3>
+          <p>A second <a href="https://gauge-forge.com/qiqc/case-study">case study</a> asks the agent to build a predictive model of a hidden 60-qubit circuit controlled by six parameters. After the measurement phase closes, the agent receives 40 previously unseen parameter settings. For each setting, it must predict 1,770 pairwise correlations.</p>
+          <p>The agent has to choose useful measurements before it sees those test settings. Spending the budget on redundant samples can leave the model poorly constrained where a prediction is needed. This makes experimental design part of the task: the quality of the final model depends on the information the agent chose to collect.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="completion">
+          <h2 id="completion">Finishing is part of the experiment</h2>
+          <p>Across the pass–fail evaluation, <a href="https://arxiv.org/html/2609.17439v1#S2.SS4">937 of the 1,510 failed trials ended without a final submission</a>. Agents were often still running experiments when time expired. This points to a practical requirement for autonomy: reserving enough time to check, package, and submit the result.</p>
+          <p>Among failed trials with a final submission, 54% met the delivery requirements but <a href="https://arxiv.org/html/2609.17439v1#S4">failed the scientific checks</a>.</p>
+          <p>Performance also varied by domain. In simulation and many-body physics, the pooled pass rate was 15%: 64% for the three highest-ranked systems overall and 4% for the other fourteen. These are <a href="https://arxiv.org/html/2609.17439v1#S2.SS4">results from the reported evaluation</a>, tied to its tasks, tools, and budgets.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="measurement">
@@ -109,6 +130,9 @@
           <ul>
             <li><a href="https://arxiv.org/abs/2609.17439">Evaluating Verified Autonomy in Quantum Engineering</a> · arXiv:2609.17439, submitted 15 September 2026.</li>
             <li><a href="https://gauge-forge.com/qiqc">QIQCBench project and leaderboard</a> · <a href="https://gauge-forge.com/qiqc/harbor">architecture</a> · <a href="https://gauge-forge.com/qiqc/case-study">case studies</a>.</li>
+            <li><a href="https://github.com/GaugeForge/Quantum-Harbor">Quantum-Harbor code and released tasks</a> · the public repository currently includes five tasks.</li>
+            <li><a href="https://gaugeforge.github.io/qiqc-challenge/">Agentic Quantum Coding Challenge</a> · event information and registration.</li>
+            <li><a href="https://mp.weixin.qq.com/s/vEnKLcSPibQr3YyqrD0kQw">Chinese-language coverage by Xinzhiyuan</a> · a broader introduction to the work and its experimental case studies.</li>
           </ul>
         </aside>
         <a class="post-back" href="../index.html#blog">← back to the blog</a>
