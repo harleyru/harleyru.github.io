@@ -241,19 +241,33 @@ a:hover { color: var(--blue); }
 }
 .portrait-topics {
   display: flex;
+  align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem 0.8rem;
   max-width: 350px;
   margin: 1rem 0 0;
-  padding: 0;
+  padding: 0.25rem 0.2rem;
   list-style: none;
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.74rem;
+  line-height: 1.3;
   color: #c6cfca;
   text-align: center;
 }
-.portrait-topics li { padding: 0.15rem 0.5rem; border: 1px solid rgba(233, 237, 235, 0.18); border-radius: 3px; }
+.portrait-topics li { white-space: nowrap; animation: portrait-topic-drift 7s ease-in-out infinite; }
+.portrait-topics li:nth-child(1) { color: #7c96ff; font-size: 0.96rem; font-weight: 600; animation-delay: -2.1s; }
+.portrait-topics li:nth-child(2) { font-size: 0.82rem; animation-duration: 6.2s; animation-delay: -0.9s; }
+.portrait-topics li:nth-child(3) { color: #7c96ff; font-size: 0.88rem; animation-duration: 8.1s; animation-delay: -3.4s; }
+.portrait-topics li:nth-child(4) { font-size: 0.82rem; animation-delay: -1.5s; }
+.portrait-topics li:nth-child(5) { animation-duration: 7.4s; animation-delay: -4.2s; }
+.portrait-topics li:nth-child(6) { animation-duration: 6.6s; animation-delay: -2.8s; }
+@keyframes portrait-topic-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-2px, -1px) rotate(-0.6deg); }
+  50% { transform: translate(1px, -3px) rotate(0.8deg); }
+  75% { transform: translate(2px, -1px) rotate(-0.4deg); }
+}
 
 .terminal-section {
   width: min(100%, var(--content));
@@ -514,4 +528,5 @@ blockquote {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .portrait-topics li { animation: none; }
 }
