@@ -15,6 +15,7 @@ straight to the `main` branch and served as static files.
 - `script.js` — theme toggle, scrollspy, reveal animations
 - `favicon.svg` — bra-ket logo favicon
 - `assets/figs/` — figures used in publications and blog posts
+- `assets/portraits/shihao-ru.jpg` — supplied personal photo; its homepage crop is controlled by `.portrait-frame` in CSS
 - `Resume_Shihao.pdf` — CV
 
 ## Editing content
