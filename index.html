@@ -27,8 +27,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" />
-    <link rel="stylesheet" href="styles.css?v=20261013-2" />
-    <script src="script.js?v=20261013-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261013-3" />
+    <script src="script.js?v=20261013-3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -214,8 +214,17 @@
         <p class="prompt">⟨ψ| blog</p>
         <div class="terminal-rule" aria-hidden="true"></div>
         <h2>Blog</h2>
-        <p class="blog-empty">$ ls ./blog → empty</p>
-        <p class="blog-note">// coming soon — experiment notes, instruments, and quantum sensing stories.</p>
+        <article class="blog-preview">
+          <div>
+            <p class="blog-meta"><time datetime="2026-10-13">13 Oct 2026</time> · research note</p>
+            <h3><a href="blog/quantum-harbor.html">Quantum-Harbor: testing AI agents in a virtual quantum lab</a></h3>
+            <p>How we test AI agents on quantum engineering tasks, check their experimental evidence, and measure what they can reliably complete.</p>
+            <a class="blog-read" href="blog/quantum-harbor.html">read the note →</a>
+          </div>
+          <a class="blog-preview-image" href="blog/quantum-harbor.html" aria-label="Read the Quantum-Harbor research note">
+            <img src="assets/figs/quantum-harbor.png" width="1134" height="733" loading="lazy" alt="Overview of Quantum-Harbor's virtual quantum laboratory." />
+          </a>
+        </article>
       </section>
 
       <section id="projects" class="terminal-section reveal">

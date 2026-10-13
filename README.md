@@ -8,12 +8,13 @@ straight to the `main` branch and served as static files.
 
 ## Structure
 
-- `index.html` — homepage (hero, research, latest papers, projects, contact)
+- `index.html` — homepage (hero, research, latest papers, blog, projects, contact)
 - `publications.html` — full publication list, grouped by research area
+- `blog/quantum-harbor.html` — English research note on verified autonomy in quantum engineering
 - `styles.css` — all styling, including the dark theme variables
 - `script.js` — theme toggle, scrollspy, reveal animations
 - `favicon.svg` — bra-ket logo favicon
-- `assets/figs/` — figures used on the publications page
+- `assets/figs/` — figures used in publications and blog posts
 - `Resume_Shihao.pdf` — CV
 
 ## Editing content
@@ -31,7 +32,7 @@ straight to the `main` branch and served as static files.
 ## Deploy
 
 Push to `main` — GitHub Pages publishes automatically. After changing
-`styles.css` or `script.js`, bump the `?v=` query string in both HTML files so
+`styles.css` or `script.js`, bump the `?v=` query string in all HTML files so
 visitors don't keep a stale cached copy.
 
 ## Notes
@@ -45,6 +46,7 @@ visitors don't keep a stale cached copy.
 - New publication figures are taken from the papers:
   - `reimpell-werner.png`: [Figure 1](https://arxiv.org/html/2609.40203v1/fig1.png).
   - `quantum-harbor.png`: [Figure 1](https://arxiv.org/html/2609.17439v1/fig_intro.png).
+  - `quantum-harbor-framework.png`: [Figure 2](https://arxiv.org/html/2609.17439v1/fig_framework.png), used in the blog post.
   - `interlayer-excitons.png`: the [ACS visual abstract](https://doi.org/10.1021/acs.nanolett.6c03241),
     rendered from its original SVG with no changes to the scientific content.
 

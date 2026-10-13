@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <title>Quantum-Harbor: testing AI agents in a virtual quantum lab — QuantRu</title>
+    <meta name="description" content="Shihao Ru introduces Quantum-Harbor and QIQCBench: a virtual quantum lab, independent verification, and what current AI agents can reliably complete." />
+    <meta property="og:title" content="Quantum-Harbor: testing AI agents in a virtual quantum lab" />
+    <meta property="og:description" content="A research note on verified autonomy in quantum engineering, by Shihao Ru." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://quantru.org/blog/quantum-harbor.html" />
+    <meta property="og:image" content="https://quantru.org/assets/figs/quantum-harbor.png" />
+    <meta property="article:published_time" content="2026-10-13" />
+    <meta name="author" content="Shihao Ru" />
+    <link rel="canonical" href="https://quantru.org/blog/quantum-harbor.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=20261013-3" />
+    <script src="../script.js?v=20261013-3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="RuSH Quantum home"><span class="brand-mark"><span class="bk-prompt">❯ </span><span class="bk-br">⟨</span>Ru<span class="bk-bar" aria-hidden="true"></span><span class="bk-sh">SH</span><span class="bk-br">⟩</span><span class="bk-cursor" aria-hidden="true"></span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html#research">research</a>
+          <a href="../publications.html">publications</a>
+          <a href="../index.html#blog" aria-current="location">blog</a>
+          <a href="../index.html#projects">projects</a>
+          <a href="../index.html#contact">contact</a>
+          <a href="../Resume_Shihao.pdf" target="_blank" rel="noreferrer">CV ↓</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">dark</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page-shell">
+      <article class="blog-post" aria-labelledby="post-title">
+        <header class="post-header" id="top">
+          <a class="post-back" href="../index.html#blog">← blog</a>
+          <p class="prompt">⟨ψ| notes / AI for quantum engineering</p>
+          <div class="terminal-rule" aria-hidden="true"></div>
+          <h1 id="post-title">Quantum-Harbor: testing AI agents in a virtual quantum lab</h1>
+          <p class="post-meta">Shihao Ru · <time datetime="2026-10-13">13 October 2026</time> · research note</p>
+          <p class="post-deck">An introduction to our recent preprint, <a href="https://arxiv.org/abs/2609.17439">Evaluating Verified Autonomy in Quantum Engineering</a>.</p>
+          <nav class="post-links" aria-label="Research resources">
+            <a href="https://arxiv.org/abs/2609.17439">read the paper ↗</a>
+            <a href="https://gauge-forge.com/qiqc">explore QIQCBench ↗</a>
+          </nav>
+        </header>
+
+        <div class="post-prose">
+          <p>A calibration only becomes useful when it survives another measurement. An AI agent working on a quantum experiment faces the same demand: choose what to measure, interpret noisy observations, and leave enough evidence for someone else to check the result. This is the problem we set out to study with Quantum-Harbor.</p>
+        </div>
+
+        <figure class="post-figure">
+          <a href="../assets/figs/quantum-harbor.png" target="_blank" rel="noreferrer" aria-label="Open Quantum-Harbor overview figure at full size">
+            <img src="../assets/figs/quantum-harbor.png" width="1134" height="733" alt="Quantum-Harbor overview showing an agent working through quantum engineering tasks and submitting results for verification." />
+          </a>
+          <figcaption>Quantum-Harbor and its quantum engineering tasks. <a href="https://arxiv.org/html/2609.17439v1#S1.F1">Figure 1 of our paper</a>; select the image to view it at full size.</figcaption>
+        </figure>
+
+        <section class="post-prose" aria-labelledby="verification">
+          <h2 id="verification">A lab with an independent verifier</h2>
+          <p>Quantum-Harbor separates the agent, the experimental backend, and the verifier. The agent can write code and use public experimental interfaces. A separate service holds the hidden device configuration and records the experiments. The verifier checks submitted conclusions against those records; calibration and design tasks can also be tested on fresh hidden data. The <a href="https://gauge-forge.com/qiqc/harbor">architecture page</a> explains this separation.</p>
+          <p>For an experimentalist, this is a useful way to specify a handover: the settings used, the observations collected, and the check that makes a result worth trusting. Each part should remain inspectable after the agent has stopped.</p>
+        </section>
+
+        <figure class="post-figure">
+          <a href="../assets/figs/quantum-harbor-framework.png" target="_blank" rel="noreferrer" aria-label="Open Quantum-Harbor architecture figure at full size">
+            <img src="../assets/figs/quantum-harbor-framework.png" width="2037" height="780" loading="lazy" alt="Quantum-Harbor architecture, with the agent environment separated from a sidecar containing hidden hardware parameters, experimental records, and grading." />
+          </a>
+          <figcaption>The agent's workspace is separated from hidden parameters and grading. <a href="https://arxiv.org/html/2609.17439v1#S2.F2">Figure 2 of our paper</a>.</figcaption>
+        </figure>
+
+        <section class="post-prose" aria-labelledby="benchmark">
+          <h2 id="benchmark">What we measured</h2>
+          <p><a href="https://gauge-forge.com/qiqc">QIQCBench</a> contains 49 tasks across six domains. There are 39 pass–fail tasks, seven racing tasks scored separately, and three infrastructure checks excluded from science scores. The evaluation compares 17 complete agentic systems, including their execution harnesses.</p>
+          <p>On the pass–fail tasks, the <a href="https://arxiv.org/html/2609.17439v1#S2.SS4">paper reports success rates of 3%–78%</a>. Each system gets three attempts per task, giving 117 scored trials, with a three-hour limit per attempt. These results measure performance in simulated environments; they do not establish reliable autonomy on physical hardware.</p>
+          <h3>A task where old notes are not enough</h3>
+          <p>One <a href="https://gauge-forge.com/qiqc/case-study">case study</a> involves a logical CNOT implemented through lattice surgery. The notebook records measurements on separate code patches and recommends reusing the decoder calibration. Merging the patches introduces correlated errors at their boundary. To succeed, the agent needs to measure the merged configuration and update the decoder using the new evidence.</p>
+          <p>The practical difficulty is deciding when a familiar procedure has stopped being adequate. In a lab, yesterday's working settings are a starting point. Their validity has to be checked under today's conditions.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="measurement">
+          <h2 id="measurement">What this means for quantum measurement</h2>
+          <p>For my work on quantum sensing and measurement control, the useful question is how to make each automated step testable. A proposed control setting should come with the measurement that supports it, a clear acceptance criterion, and a record of what was actually run. Those requirements help turn an agent's output into something another researcher can reproduce.</p>
+          <p>Quantum-Harbor provides a controlled setting for testing this process. Moving it into a working laboratory will require further validation with instruments, drift, and the constraints of real experiments.</p>
+        </section>
+
+        <aside class="post-resources" aria-labelledby="resources-title">
+          <h2 id="resources-title">Read more</h2>
+          <ul>
+            <li><a href="https://arxiv.org/abs/2609.17439">Evaluating Verified Autonomy in Quantum Engineering</a> · arXiv:2609.17439, submitted 15 September 2026.</li>
+            <li><a href="https://gauge-forge.com/qiqc">QIQCBench project and leaderboard</a> · <a href="https://gauge-forge.com/qiqc/harbor">architecture</a> · <a href="https://gauge-forge.com/qiqc/case-study">case studies</a>.</li>
+          </ul>
+        </aside>
+        <a class="post-back" href="../index.html#blog">← back to the blog</a>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-logout">⟨ψ| logout<span aria-hidden="true">▍</span></p>
+        <p class="footer-end">session ended · solid-state quantum physics, sensing, and information.</p>
+        <p class="footer-links"><a data-mail href="../index.html#contact">email</a> · <a href="https://github.com/harleyru">github</a> · <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&amp;hl=en">scholar</a> · <a href="../Resume_Shihao.pdf">cv</a></p>
+        <p class="copyright">© <span data-year></span> ⟨Ru|SH⟩</p>
+      </div>
+      <a href="#top">↑ top</a>
+    </footer>
+  </body>
+</html>
