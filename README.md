@@ -19,8 +19,8 @@ straight to the `main` branch and served as static files.
 ## Editing content
 
 - Homepage sections live in `index.html`; each section is a `terminal-section`.
-- Publications live in `publications.html`, grouped into five categories
-  (sensing, matter, photonics, SPDC, metrology). Each category heading has an
+- Publications live in `publications.html`, grouped into six categories
+  (sensing, matter, photonics, information, metrology, AI engineering). Each category heading has an
   anchor (`#pub-sensing`, …) used by the sidebar and table of contents.
 - Paper figures are stored in `assets/figs/` and referenced from
   `publications.html`.
@@ -35,6 +35,18 @@ Push to `main` — GitHub Pages publishes automatically. After changing
 visitors don't keep a stale cached copy.
 
 ## Notes
+
+- The October 2026 update lists 27 English-language works across six areas.
+  The latest-paper order uses the first online publication or arXiv submission
+  date: Reimpell–Werner (30 September), interlayer excitons (24 September),
+  Quantum-Harbor (15 September), and quantum cryptographic conferencing
+  (9 September). The Nano Letters issue date is 7 October; the PRL issue date
+  is 11 September.
+- New publication figures are taken from the papers:
+  - `reimpell-werner.png`: [Figure 1](https://arxiv.org/html/2609.40203v1/fig1.png).
+  - `quantum-harbor.png`: [Figure 1](https://arxiv.org/html/2609.17439v1/fig_intro.png).
+  - `interlayer-excitons.png`: the [ACS visual abstract](https://doi.org/10.1021/acs.nanolett.6c03241),
+    rendered from its original SVG with no changes to the scientific content.
 
 - Dark mode is toggled from the header and remembered in `localStorage`.
 - Email addresses are assembled at click time to reduce spam harvesting.
