@@ -69,7 +69,7 @@
           <div class="terminal-rule" aria-hidden="true"></div>
           <h1 id="post-title">Double-quantum control in hBN: from spin coherence to AC magnetometry</h1>
           <p class="post-meta">Shihao Ru · <time datetime="2026-11-13">13 November 2026</time> · research note</p>
-          <p class="post-deck">Two synchronized microwave tones let us use the outer states of a spin triplet to sense a magnetic field. Our recent work brings this control to boron-vacancy spin ensembles in hexagonal boron nitride.</p>
+          <p class="post-deck">We use two synchronized microwave tones to control boron-vacancy spin ensembles in hexagonal boron nitride and measure an AC magnetic field.</p>
           <nav class="post-links" aria-label="Research resources">
             <a href="https://doi.org/10.1103/hmk5-d2dj">Phys. Rev. Applied · accepted ↗</a>
             <a href="https://arxiv.org/abs/2611.13447">read the preprint ↗</a>
@@ -77,27 +77,27 @@
         </header>
 
         <div class="post-prose">
-          <p>A spin sensor converts a magnetic field into a relative phase, then converts that phase into a measurable population. The choice of states matters: it determines how strongly the phase responds to the field and which other shifts enter the measurement.</p>
-          <p>In our <a href="#ref-ru">work accepted in Physical Review Applied</a>, we use double-quantum (DQ) coherence in negatively charged boron vacancies, V<sub>B</sub><sup>−</sup>, in hBN. We demonstrate control of the spin triplet, detect an externally applied 20 MHz magnetic field, and obtain a 2.57-fold improvement in signal-to-noise ratio over single-quantum (SQ) sensing in a matched comparison. Here I explain how those pieces fit together, and how they build on earlier DQ and AC-sensing experiments.</p>
+          <p>In spin magnetometry, we prepare a superposition, let a magnetic field change its relative phase, and map that phase onto a fluorescence signal. The two states we choose determine the field response and the shifts that enter the measurement.</p>
+          <p>In our <a href="#ref-ru">work accepted in Physical Review Applied</a>, we use double-quantum (DQ) coherence in negatively charged boron vacancies, V<sub>B</sub><sup>−</sup>, in hBN. We control the spin triplet and detect an applied 20 MHz magnetic field. In a comparison under the same experimental conditions, DQ sensing gives a 2.57-fold improvement in signal-to-noise ratio over single-quantum (SQ) sensing.</p>
         </div>
 
         <section class="post-prose" aria-labelledby="outer-states">
           <h2 id="outer-states">Choosing the two outer spin states</h2>
-          <p>The ground state of V<sub>B</sub><sup>−</sup> is a spin triplet, with states labelled by <i>m</i><sub>s</sub> = 0, +1, and −1. A conventional SQ measurement uses a superposition of |0⟩ and one of the outer states. DQ sensing uses the relative phase between |+1⟩ and |−1⟩, whose spin projections differ by two.</p>
+          <p>The V<sub>B</sub><sup>−</sup> ground state is a spin triplet, with spin projections <i>m</i><sub>s</sub> = 0, +1, and −1. In an SQ measurement, we use a superposition of |0⟩ and one of the outer states. For DQ sensing, we use |+1⟩ and |−1⟩, whose spin projections differ by two.</p>
           <p>In a simple axial-field picture, the two transition frequencies from |0⟩ are</p>
           <div class="dq-equation" aria-label="The two transition frequencies and their double-quantum difference">
             <span><i>f</i><sub>+</sub> ≈ <i>D</i><sub>eff</sub> + γ<sub>e</sub><i>B</i><sub>z</sub>, &nbsp; <i>f</i><sub>−</sub> ≈ <i>D</i><sub>eff</sub> − γ<sub>e</sub><i>B</i><sub>z</sub></span>
             <span><i>f</i><sub>DQ</sub> = <i>f</i><sub>+</sub> − <i>f</i><sub>−</sub> ≈ 2γ<sub>e</sub><i>B</i><sub>z</sub>.</span>
           </div>
-          <p>Here γ<sub>e</sub> is the electron gyromagnetic ratio in Hz/T, and <i>D</i><sub>eff</sub> includes shifts shared by the two outer levels. Their difference cancels that common contribution while retaining twice the magnetic-field slope of either SQ transition. This approximation applies when transverse mixing is small compared with the axial Zeeman splitting.</p>
-          <p><a href="#ref-fang">Fang and colleagues</a> used this idea in diamond NV centres through quantum beats between the outer spin states. It gives a useful way to reject temperature- or strain-induced shifts of the common splitting. The magnetic-noise response grows with the magnetic-signal response, however. As the ensemble work of <a href="#ref-bauch">Bauch and colleagues</a> makes clear, the benefit depends on which noise source limits the experiment; DQ coherence alone does not guarantee a longer dephasing time.</p>
+          <p>Here γ<sub>e</sub> is the electron gyromagnetic ratio in Hz/T, and <i>D</i><sub>eff</sub> includes shifts shared by the two outer levels. Taking the frequency difference cancels this common contribution and doubles the magnetic-field slope relative to either SQ transition. We use this approximation when transverse mixing is small compared with the axial Zeeman splitting.</p>
+          <p><a href="#ref-fang">Fang and colleagues</a> demonstrated this principle through quantum beats in diamond NV centres, suppressing temperature- and strain-induced shifts of the common splitting. DQ coherence responds more strongly to magnetic noise as well as to the field of interest. The ensemble experiments of <a href="#ref-bauch">Bauch and colleagues</a> show why the dominant noise source matters: rejecting common shifts can help, but DQ coherence alone does not guarantee a longer dephasing time.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="control">
           <h2 id="control">Making DQ coherence in hBN</h2>
-          <p>We address the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with two synchronized microwave tones. Their amplitudes, phases, and durations control how population moves through the three-level system and how coherence is prepared between the outer states. Subsequent pulses map the accumulated phase back to a population that can be read through spin-dependent fluorescence.</p>
-          <p>In our setup, the instruments share a 10 MHz reference. An arbitrary waveform generator controls the microwave IQ modulation, and the two tones are combined and delivered through a coplanar waveguide. Green laser pulses initialize and read out an ensemble of defects in an hBN flake. The measurements are at room temperature.</p>
-          <p>Dual-frequency DQ control has an established precedent in diamond: <a href="#ref-mamin">Mamin and colleagues</a> incorporated it into multipulse magnetometry with near-surface NV centres. Bringing it to hBN requires control across a broadened ensemble of spin resonances. In our ensemble, DQ driving produces approximately twice the optical readout contrast of SQ driving. That measured contrast gain is distinct from the factor of two in the ideal magnetic phase response.</p>
+          <p>We drive the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with synchronized microwave tones. By setting their amplitudes, phases, and pulse durations, we prepare coherence between the outer states. After the sensing interval, we map the accumulated phase onto spin populations and read them through spin-dependent fluorescence.</p>
+          <p>Our instruments share a 10 MHz reference. We control the microwave IQ modulation with an arbitrary waveform generator, combine the two tones, and deliver them through a coplanar waveguide. We use green laser pulses to initialize and read out the defect ensemble in an hBN flake at room temperature.</p>
+          <p><a href="#ref-mamin">Mamin and colleagues</a> used dual-frequency DQ control for multipulse magnetometry with near-surface NV centres in diamond. In hBN, we need to maintain control across a broadened ensemble of resonances. We observe about twice the optical readout contrast with DQ driving as with SQ driving. This contrast gain concerns the fluorescence measurement; the factor of two in the ideal magnetic phase response comes from the choice of spin states.</p>
         </section>
 
         <figure class="post-figure" id="fig-control">
@@ -109,13 +109,13 @@
 
         <section class="post-prose" aria-labelledby="ac-sensing">
           <h2 id="ac-sensing">From a spin echo to an AC-field spectrum</h2>
-          <p>A static frequency offset can be refocused by a spin echo. An oscillating field can accumulate phase through the same sequence if the spin inversion is timed to the field's sign change. The pulse timing therefore acts as a frequency filter. For an ideal DQ echo, the magnetic phase can be written as</p>
+          <p>We use a spin echo to refocus a static frequency offset. If we time the spin inversion to the sign change of an oscillating field, the field-induced phase accumulates across the echo. We can therefore select an AC frequency through the pulse timing. For an ideal DQ echo, we write the magnetic phase as</p>
           <div class="dq-equation" aria-label="The double-quantum magnetic phase is four pi gamma e times the integral of the switching function times the magnetic field">
             <span>φ<sub>DQ</sub> = 4πγ<sub>e</sub> ∫<sub>0</sub><sup>T</sup> <i>y</i>(<i>t</i>) <i>B</i><sub>ac</sub>(<i>t</i>) d<i>t</i>.</span>
           </div>
-          <p>The switching function <i>y</i>(<i>t</i>) changes sign under the refocusing operation. When its sign follows the AC field, successive parts of the integral add. Finite pulse duration and control errors affect the actual response, so this expression is a useful idealization for understanding the sequence.</p>
-          <p>Correlation spectroscopy compares two sensing intervals separated by a variable delay. Scanning that delay reveals an oscillation whose Fourier spectrum identifies the field frequency. <a href="#ref-laraoui">Laraoui and colleagues</a> developed this approach for resolving nuclear-spin signals near an NV centre, extending the accessible correlation time beyond a single electron-spin coherence interval.</p>
-          <p>For our external-field measurement, a nearby coil applies an RF magnetic field at 20 MHz. The correlation signal produces a Fourier peak at that frequency. The paper separately reports a feature near 46.3 MHz without an applied RF signal, attributed to hyperfine coupling to nearby nuclear spins; the 20 MHz experiment is the direct test with a deliberately applied field.</p>
+          <p>The switching function <i>y</i>(<i>t</i>) changes sign under the refocusing operation. Matching its sign to the AC field makes successive contributions to the phase add. This ideal expression neglects finite pulse duration and control errors.</p>
+          <p>In correlation spectroscopy, we compare two sensing intervals separated by a variable delay. By scanning that delay and Fourier-transforming the resulting oscillation, we extract the field frequency. <a href="#ref-laraoui">Laraoui and colleagues</a> used this approach to resolve nuclear-spin signals near an NV centre over correlation times longer than a single electron-spin coherence interval.</p>
+          <p>We apply a 20 MHz RF magnetic field with a nearby coil and observe a Fourier peak at the same frequency in the correlation measurement. Without an applied RF signal, we find a separate feature near 46.3 MHz, which we attribute to hyperfine coupling to nearby nuclear spins.</p>
         </section>
 
         <figure class="post-figure" id="fig-ac">
@@ -127,16 +127,16 @@
 
         <section class="post-prose" aria-labelledby="heterodyne">
           <h2 id="heterodyne">Qdyne: reading the difference frequency</h2>
-          <p>Quantum heterodyne detection, or Qdyne, repeats a fixed sensing sequence against a stable classical clock. Each block prepares the spin, samples the field, and produces a fluorescence readout. The phase of the field relative to the sequence advances from block to block, leaving a beat pattern in the readout record.</p>
-          <p>This is a difference-frequency measurement. For a signal at <i>f</i><sub>ac</sub> and a timing reference at <i>f</i><sub>ref</sub>, the relevant detuning is δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub>. In the small-signal regime, the phase-sensitive part of the fluorescence follows this relative phase. Fourier analysis of the timed record recovers the beat; the reference and the selected frequency band then connect it to the applied field frequency.</p>
-          <p>The experiments of <a href="#ref-schmitt">Schmitt and colleagues</a> and <a href="#ref-boss">Boss and colleagues</a> established how this clock-referenced measurement can achieve frequency resolution far narrower than the inverse of one spin-coherence time. Each cycle can reinitialize the spin. A stable clock maintains the phase reference across successive readouts.</p>
-          <p>Three timescales have different roles. The sensing window sets the phase collected in each block and the filter response; the repetition period sets the sampling rate and its frequency aliases; the total record length sets the Fourier-bin spacing. Assigning an absolute frequency requires the reference and the appropriate alias band. Clock stability and the signal's own coherence ultimately limit the useful record length.</p>
-          <p>This approach already has an hBN foundation. <a href="#ref-rizzato">Rizzato and colleagues</a> demonstrated RF sensing and coherently averaged synchronized readout (CASR) with V<sub>B</sub><sup>−</sup> ensembles. Our work adds DQ control to this sensing setting and compares its performance directly with SQ control.</p>
+          <p>For quantum heterodyne detection, or Qdyne, we repeat a fixed sensing sequence against a stable classical clock. In each block, we prepare the spin, sample the field, and record the fluorescence. The field phase relative to the sequence advances between blocks, producing a beat in the readout record.</p>
+          <p>We measure the difference frequency δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub> between the AC signal and the timing reference. In the small-signal regime, the phase-sensitive fluorescence follows this relative phase. We extract the beat by Fourier-transforming the timed record, then use the reference and the selected frequency band to recover the field frequency.</p>
+          <p><a href="#ref-schmitt">Schmitt and colleagues</a> and <a href="#ref-boss">Boss and colleagues</a> demonstrated frequency resolution far narrower than the inverse of a single spin-coherence time with clock-referenced readout. We can reinitialize the spin in each cycle because the classical clock maintains the phase reference between readouts.</p>
+          <p>The sensing window sets how much phase we collect per block and which frequencies we detect. The repetition period sets the sampling rate and its aliases, while the total record length sets the Fourier-bin spacing. To assign an absolute frequency, we need the reference and the appropriate alias band. Clock stability and the coherence of the signal limit how far we can extend the useful record.</p>
+          <p><a href="#ref-rizzato">Rizzato and colleagues</a> demonstrated RF sensing and coherently averaged synchronized readout (CASR) in hBN V<sub>B</sub><sup>−</sup> ensembles. We build on this sensing approach with DQ control and a comparison against SQ control.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="results">
-          <h2 id="results">What improves in the measurement?</h2>
-          <p>Under the same experimental conditions, our Qdyne comparison gives a signal-to-noise ratio of 100 with SQ control and 257 with DQ control. The ratio is 2.57, rounded to 2.6 in the abstract.</p>
+          <h2 id="results">The measured signal-to-noise gain</h2>
+          <p>We compare SQ and DQ control under the same Qdyne measurement conditions:</p>
           <table class="dq-results">
             <caption>Reported Qdyne comparison for an applied 20 MHz RF field.</caption>
             <thead><tr><th scope="col">Control</th><th scope="col">Signal-to-noise ratio</th></tr></thead>
@@ -146,13 +146,13 @@
               <tr><th scope="row">DQ / SQ</th><td>2.57</td></tr>
             </tbody>
           </table>
-          <p>The phase response, optical contrast, and measured SNR describe different parts of the experiment. The final gain depends on pulse fidelity, ensemble inhomogeneity, photon collection, and noise as well as the chosen coherence. The 2.57-fold result is the measured SNR improvement in this comparison; an absolute sensitivity in T/√Hz would require field calibration and a measurement-time normalization.</p>
+          <p>The measured SNR depends on pulse fidelity, ensemble inhomogeneity, photon collection, and noise. We cannot predict it by multiplying the ideal phase-response gain by the optical contrast gain. The 2.57-fold result is the SNR ratio in this experiment; to quote an absolute sensitivity in T/√Hz, we would need a field calibration and a measurement-time normalization.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="next">
-          <h2 id="next">What I would optimize next</h2>
-          <p>The control needs to remain accurate across an ensemble. In NV magnetic microscopy, the <a href="#ref-hart">DQ 4-Ramsey protocol of Hart and colleagues</a> uses phase cycling to reject residual SQ contributions from imperfect pulses. That provides a useful direction for testing how pulse errors enter hBN DQ measurements. Measuring the response across detuning and microwave amplitude would help identify where the contrast and SNR gains survive.</p>
-          <p>The sensing comparison should then be extended to calibrated field amplitudes and matched acquisition times, with the noise floor tracked as the record grows. That would connect the present SNR result to an absolute sensitivity and identify whether microwave control, photon statistics, or long-term drift is the next limitation. DQ control gives us a stronger phase response and an experimentally improved readout; the next task is to preserve those gains through the full measurement.</p>
+          <h2 id="next">Improving control across the ensemble</h2>
+          <p>I would first map the contrast and SNR against microwave detuning and amplitude to see how much control error the DQ measurement tolerates. In NV magnetic microscopy, <a href="#ref-hart">Hart and colleagues' DQ 4-Ramsey protocol</a> uses phase cycling to reject residual SQ contributions from imperfect pulses. It offers a starting point for testing similar errors in hBN.</p>
+          <p>With calibrated field amplitudes, we could then compare absolute sensitivity at matched acquisition times. Tracking the noise floor over longer records would help us distinguish limitations from microwave control, photon statistics, and drift, and decide which part of the experiment to improve next.</p>
         </section>
 
         <aside class="post-resources dq-references" aria-labelledby="resources-title">
