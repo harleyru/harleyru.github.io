@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f4f2ec" />
-    <title>Double-quantum control in hBN: from spin coherence to AC magnetometry — QuantRu</title>
+    <title>Double-quantum control and AC magnetometry in hBN</title>
     <meta name="description" content="How two microwave tones enable double-quantum control of hBN spin defects, with 20 MHz magnetic-field detection and a 2.57-fold signal-to-noise improvement." />
-    <meta property="og:title" content="Double-quantum control in hBN: from spin coherence to AC magnetometry" />
+    <meta property="og:title" content="Double-quantum control and AC magnetometry in hBN" />
     <meta property="og:description" content="A research note by Shihao Ru on double-quantum coherence, spin-echo sensing, and quantum heterodyne detection." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://quantru.org/blog/hbn-double-quantum.html" />
@@ -67,7 +67,7 @@
           <a class="post-back" href="../index.html#blog">← blog</a>
           <p class="prompt">⟨ψ| notes / quantum sensing</p>
           <div class="terminal-rule" aria-hidden="true"></div>
-          <h1 id="post-title">Double-quantum control in hBN: from spin coherence to AC magnetometry</h1>
+          <h1 id="post-title">Double-quantum control and AC magnetometry in hBN</h1>
           <p class="post-meta">Shihao Ru · <time datetime="2026-11-13">13 November 2026</time> · research note</p>
           <p class="post-deck">We use two synchronized microwave tones to control boron-vacancy spin ensembles in hexagonal boron nitride and measure an AC magnetic field.</p>
           <nav class="post-links" aria-label="Research resources">
@@ -90,21 +90,21 @@
             <span><i>f</i><sub>DQ</sub> = <i>f</i><sub>+</sub> − <i>f</i><sub>−</sub> ≈ 2γ<sub>e</sub><i>B</i><sub>z</sub>.</span>
           </div>
           <p>Here γ<sub>e</sub> is the electron gyromagnetic ratio in Hz/T, and <i>D</i><sub>eff</sub> includes shifts shared by the two outer levels. Taking the frequency difference cancels this common contribution and doubles the magnetic-field slope relative to either SQ transition. We use this approximation when transverse mixing is small compared with the axial Zeeman splitting.</p>
-          <p><a href="#ref-fang">Fang and colleagues</a> demonstrated this principle through quantum beats in diamond NV centres, suppressing temperature- and strain-induced shifts of the common splitting. DQ coherence responds more strongly to magnetic noise as well as to the field of interest. The ensemble experiments of <a href="#ref-bauch">Bauch and colleagues</a> show why the dominant noise source matters: rejecting common shifts can help, but DQ coherence alone does not guarantee a longer dephasing time.</p>
+          <p><a href="#ref-fang">Fang and colleagues</a> demonstrated this principle through quantum beats in diamond NV centres, suppressing temperature- and strain-induced shifts of the common splitting. DQ coherence responds more strongly to magnetic noise as well as to the field of interest. The ensemble experiments of <a href="#ref-bauch">Bauch and colleagues</a> show why the dominant noise source matters. Rejecting common shifts can help, but DQ coherence alone does not guarantee a longer dephasing time.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="control">
           <h2 id="control">Making DQ coherence in hBN</h2>
           <p>We drive the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with synchronized microwave tones. By setting their amplitudes, phases, and pulse durations, we prepare coherence between the outer states. After the sensing interval, we map the accumulated phase onto spin populations and read them out through spin-dependent fluorescence.</p>
           <p>Our instruments share a 10 MHz reference. We control the microwave IQ modulation with an arbitrary waveform generator, combine the two tones, and deliver them through a coplanar waveguide. We use green laser pulses to initialize and read out the defect ensemble in an hBN flake at room temperature.</p>
-          <p><a href="#ref-mamin">Mamin and colleagues</a> used dual-frequency DQ control for multipulse magnetometry with near-surface NV centres in diamond. In hBN, we need to maintain control across a broadened ensemble of resonances. We observe about twice the optical readout contrast with DQ driving as with SQ driving. This contrast gain concerns the fluorescence measurement; the factor of two in the ideal magnetic phase response comes from the choice of spin states.</p>
+          <p><a href="#ref-mamin">Mamin and colleagues</a> used dual-frequency DQ control for multipulse magnetometry with near-surface NV centres in diamond. In hBN, we need to maintain control across a broadened ensemble of resonances. We observe about twice the optical readout contrast with DQ driving as with SQ driving. This contrast gain concerns the fluorescence measurement. The factor of two in the ideal magnetic phase response comes from the choice of spin states.</p>
         </section>
 
         <figure class="post-figure" id="fig-control">
           <a href="../assets/figs/hbn-double-quantum.png" target="_blank" rel="noreferrer" aria-label="Open the hBN double-quantum control figure at full size">
             <img src="../assets/figs/hbn-double-quantum.png" width="4398" height="1730" alt="Spin-triplet energy levels, synchronized dual-frequency microwave setup, and measurements comparing single- and double-quantum control in hBN." />
           </a>
-          <figcaption>Preparing and reading out DQ coherence in hBN: energy levels, the microwave control chain, and SQ/DQ measurements. Original Figure 1 from <a href="https://arxiv.org/abs/2611.13447">our paper</a>; select the image to view it at full size.</figcaption>
+          <figcaption>Energy levels, the microwave control chain, and SQ/DQ measurements in hBN. Original Figure 1 from <a href="https://arxiv.org/abs/2611.13447">our paper</a>. Select the image to view it at full size.</figcaption>
         </figure>
 
         <section class="post-prose" aria-labelledby="ac-sensing">
@@ -126,7 +126,7 @@
         </figure>
 
         <section class="post-prose" aria-labelledby="heterodyne">
-          <h2 id="heterodyne">Qdyne: reading the difference frequency</h2>
+          <h2 id="heterodyne">Reading the difference frequency with Qdyne</h2>
           <p>For quantum heterodyne detection, or Qdyne, we repeat a fixed sensing sequence against a stable classical clock. In each block, we prepare the spin, sample the field, and record the fluorescence. The field phase relative to the sequence advances between blocks, producing a beat in the readout record.</p>
           <p>We measure the difference frequency δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub> between the AC signal and the timing reference. In the small-signal regime, the phase-sensitive fluorescence follows the relative phase between the field and the sequence. We extract the beat by Fourier-transforming the timed record, then use the reference and the selected frequency band to recover the field frequency.</p>
           <p><a href="#ref-schmitt">Schmitt and colleagues</a> and <a href="#ref-boss">Boss and colleagues</a> demonstrated frequency resolution far narrower than the inverse of a single spin-coherence time with clock-referenced readout. We can reinitialize the spin in each cycle because the classical clock maintains the phase reference between readouts.</p>
@@ -136,7 +136,7 @@
 
         <section class="post-prose" aria-labelledby="results">
           <h2 id="results">The measured signal-to-noise gain</h2>
-          <p>We compare SQ and DQ control under the same Qdyne measurement conditions:</p>
+          <p>We compare SQ and DQ control under the same Qdyne measurement conditions.</p>
           <table class="dq-results">
             <caption>Reported Qdyne comparison for an applied 20 MHz RF field.</caption>
             <thead><tr><th scope="col">Control</th><th scope="col">Signal-to-noise ratio</th></tr></thead>
@@ -146,7 +146,7 @@
               <tr><th scope="row">DQ / SQ</th><td>2.57</td></tr>
             </tbody>
           </table>
-          <p>The measured SNR depends on pulse fidelity, ensemble inhomogeneity, photon collection, and noise. We cannot predict it by multiplying the ideal phase-response gain by the optical contrast gain. The 2.57-fold result is the SNR ratio in this experiment; to quote an absolute sensitivity in T/√Hz, we would need a field calibration and a measurement-time normalization.</p>
+          <p>The measured SNR depends on pulse fidelity, ensemble inhomogeneity, photon collection, and noise. We cannot predict it by multiplying the ideal phase-response gain by the optical contrast gain. The 2.57-fold result is the SNR ratio in this experiment. To quote an absolute sensitivity in T/√Hz, we would need a field calibration and a measurement-time normalization.</p>
         </section>
 
         <section class="post-prose" aria-labelledby="next">
