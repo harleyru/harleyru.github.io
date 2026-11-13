@@ -11,6 +11,7 @@ straight to the `main` branch and served as static files.
 - `index.html` — homepage (hero, research, latest papers, blog, projects, contact)
 - `publications.html` — full publication list, grouped by research area
 - `blog/quantum-harbor.html` — English research note on verified autonomy in quantum engineering
+- `blog/hbn-double-quantum.html` — English research note on DQ control and AC magnetometry in hBN, with references to earlier DQ, correlation-spectroscopy, and synchronized-readout work
 - `styles.css` — all styling, including the dark theme variables
 - `script.js` — theme toggle, scrollspy, reveal animations
 - `favicon.svg` — bra-ket logo favicon
@@ -48,6 +49,9 @@ visitors don't keep a stale cached copy.
 - New publication figures are taken from the papers:
   - `hbn-double-quantum.png`: original Figure 1 from the
     [arXiv v1 source](https://arxiv.org/src/2611.13447v1), copied without changes.
+  - `hbn-double-quantum-ac-correlation.png`: the external 20 MHz RF-field
+    correlation measurement from the same source (`FigureS4.png`, placed as
+    Figure 4 in the v1 manuscript), copied without changes for the DQ blog post.
   - `reimpell-werner.png`: [Figure 1](https://arxiv.org/html/2609.40203v1/fig1.png).
   - `quantum-harbor.png`: [Figure 1](https://arxiv.org/html/2609.17439v1/fig_intro.png).
   - `quantum-harbor-framework.png`: [Figure 2](https://arxiv.org/html/2609.17439v1/fig_framework.png), used in the blog post.

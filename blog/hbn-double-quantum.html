@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <title>Double-quantum control in hBN: from spin coherence to AC magnetometry — QuantRu</title>
+    <meta name="description" content="How two microwave tones enable double-quantum control of hBN spin defects, with 20 MHz magnetic-field detection and a 2.57-fold signal-to-noise improvement." />
+    <meta property="og:title" content="Double-quantum control in hBN: from spin coherence to AC magnetometry" />
+    <meta property="og:description" content="A research note by Shihao Ru on double-quantum coherence, spin-echo sensing, and quantum heterodyne detection." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://quantru.org/blog/hbn-double-quantum.html" />
+    <meta property="og:image" content="https://quantru.org/assets/figs/hbn-double-quantum.png" />
+    <meta property="article:published_time" content="2026-11-13" />
+    <meta name="author" content="Shihao Ru" />
+    <link rel="canonical" href="https://quantru.org/blog/hbn-double-quantum.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=20261013-5" />
+    <script src="../script.js?v=20261013-5" defer></script>
+    <style>
+      .blog-post .post-figure { scroll-margin-top: 80px; }
+      .dq-equation { margin: 1.5rem 0; padding: 1rem 1.2rem; border-left: 2px solid var(--blue); background: var(--paper); line-height: 1.9; }
+      .dq-equation span { display: block; }
+      .dq-results { width: 100%; margin: 1.5rem 0; border-collapse: collapse; font-size: 0.88rem; }
+      .dq-results caption { margin-bottom: 0.65rem; text-align: left; color: var(--muted); font-size: 0.78rem; }
+      .dq-results th, .dq-results td { padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
+      .dq-results thead th { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); font-weight: 500; }
+      .dq-results td:last-child, .dq-results th:last-child { text-align: right; }
+      .dq-references li { scroll-margin-top: 85px; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="RuSH Quantum home"><span class="brand-mark"><span class="bk-prompt">❯ </span><span class="bk-br">⟨</span>Ru<span class="bk-bar" aria-hidden="true"></span><span class="bk-sh">SH</span><span class="bk-br">⟩</span><span class="bk-cursor" aria-hidden="true"></span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html#research">research</a>
+          <a href="../publications.html">publications</a>
+          <a href="../index.html#blog" aria-current="location">blog</a>
+          <a href="../index.html#projects">projects</a>
+          <a href="../index.html#contact">contact</a>
+          <a href="../Resume_Shihao.pdf" target="_blank" rel="noreferrer">CV ↓</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">dark</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page-shell">
+      <article class="blog-post" aria-labelledby="post-title">
+        <header class="post-header" id="top">
+          <a class="post-back" href="../index.html#blog">← blog</a>
+          <p class="prompt">⟨ψ| notes / quantum sensing</p>
+          <div class="terminal-rule" aria-hidden="true"></div>
+          <h1 id="post-title">Double-quantum control in hBN: from spin coherence to AC magnetometry</h1>
+          <p class="post-meta">Shihao Ru · <time datetime="2026-11-13">13 November 2026</time> · research note</p>
+          <p class="post-deck">Two synchronized microwave tones let us use the outer states of a spin triplet to sense a magnetic field. Our recent work brings this control to boron-vacancy spin ensembles in hexagonal boron nitride.</p>
+          <nav class="post-links" aria-label="Research resources">
+            <a href="https://doi.org/10.1103/hmk5-d2dj">Phys. Rev. Applied · accepted ↗</a>
+            <a href="https://arxiv.org/abs/2611.13447">read the preprint ↗</a>
+          </nav>
+        </header>
+
+        <div class="post-prose">
+          <p>A spin sensor converts a magnetic field into a relative phase, then converts that phase into a measurable population. The choice of states matters: it determines how strongly the phase responds to the field and which other shifts enter the measurement.</p>
+          <p>In our <a href="#ref-ru">work accepted in Physical Review Applied</a>, we use double-quantum (DQ) coherence in negatively charged boron vacancies, V<sub>B</sub><sup>−</sup>, in hBN. We demonstrate control of the spin triplet, detect an externally applied 20 MHz magnetic field, and obtain a 2.57-fold improvement in signal-to-noise ratio over single-quantum (SQ) sensing in a matched comparison. Here I explain how those pieces fit together, and how they build on earlier DQ and AC-sensing experiments.</p>
+        </div>
+
+        <section class="post-prose" aria-labelledby="outer-states">
+          <h2 id="outer-states">Choosing the two outer spin states</h2>
+          <p>The ground state of V<sub>B</sub><sup>−</sup> is a spin triplet, with states labelled by <i>m</i><sub>s</sub> = 0, +1, and −1. A conventional SQ measurement uses a superposition of |0⟩ and one of the outer states. DQ sensing uses the relative phase between |+1⟩ and |−1⟩, whose spin projections differ by two.</p>
+          <p>In a simple axial-field picture, the two transition frequencies from |0⟩ are</p>
+          <div class="dq-equation" aria-label="The two transition frequencies and their double-quantum difference">
+            <span><i>f</i><sub>+</sub> ≈ <i>D</i><sub>eff</sub> + γ<sub>e</sub><i>B</i><sub>z</sub>, &nbsp; <i>f</i><sub>−</sub> ≈ <i>D</i><sub>eff</sub> − γ<sub>e</sub><i>B</i><sub>z</sub></span>
+            <span><i>f</i><sub>DQ</sub> = <i>f</i><sub>+</sub> − <i>f</i><sub>−</sub> ≈ 2γ<sub>e</sub><i>B</i><sub>z</sub>.</span>
+          </div>
+          <p>Here γ<sub>e</sub> is the electron gyromagnetic ratio in Hz/T, and <i>D</i><sub>eff</sub> includes shifts shared by the two outer levels. Their difference cancels that common contribution while retaining twice the magnetic-field slope of either SQ transition. This approximation applies when transverse mixing is small compared with the axial Zeeman splitting.</p>
+          <p><a href="#ref-fang">Fang and colleagues</a> used this idea in diamond NV centres through quantum beats between the outer spin states. It gives a useful way to reject temperature- or strain-induced shifts of the common splitting. The magnetic-noise response grows with the magnetic-signal response, however. As the ensemble work of <a href="#ref-bauch">Bauch and colleagues</a> makes clear, the benefit depends on which noise source limits the experiment; DQ coherence alone does not guarantee a longer dephasing time.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="control">
+          <h2 id="control">Making DQ coherence in hBN</h2>
+          <p>We address the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with two synchronized microwave tones. Their amplitudes, phases, and durations control how population moves through the three-level system and how coherence is prepared between the outer states. Subsequent pulses map the accumulated phase back to a population that can be read through spin-dependent fluorescence.</p>
+          <p>In our setup, the instruments share a 10 MHz reference. An arbitrary waveform generator controls the microwave IQ modulation, and the two tones are combined and delivered through a coplanar waveguide. Green laser pulses initialize and read out an ensemble of defects in an hBN flake. The measurements are at room temperature.</p>
+          <p>Dual-frequency DQ control has an established precedent in diamond: <a href="#ref-mamin">Mamin and colleagues</a> incorporated it into multipulse magnetometry with near-surface NV centres. Bringing it to hBN requires control across a broadened ensemble of spin resonances. In our ensemble, DQ driving produces approximately twice the optical readout contrast of SQ driving. That measured contrast gain is distinct from the factor of two in the ideal magnetic phase response.</p>
+        </section>
+
+        <figure class="post-figure" id="fig-control">
+          <a href="../assets/figs/hbn-double-quantum.png" target="_blank" rel="noreferrer" aria-label="Open the hBN double-quantum control figure at full size">
+            <img src="../assets/figs/hbn-double-quantum.png" width="4398" height="1730" alt="Spin-triplet energy levels, synchronized dual-frequency microwave setup, and measurements comparing single- and double-quantum control in hBN." />
+          </a>
+          <figcaption>Preparing and reading out DQ coherence in hBN: energy levels, the microwave control chain, and SQ/DQ measurements. Original Figure 1 from <a href="https://arxiv.org/abs/2611.13447">our paper</a>; select the image to view it at full size.</figcaption>
+        </figure>
+
+        <section class="post-prose" aria-labelledby="ac-sensing">
+          <h2 id="ac-sensing">From a spin echo to an AC-field spectrum</h2>
+          <p>A static frequency offset can be refocused by a spin echo. An oscillating field can accumulate phase through the same sequence if the spin inversion is timed to the field's sign change. The pulse timing therefore acts as a frequency filter. For an ideal DQ echo, the magnetic phase can be written as</p>
+          <div class="dq-equation" aria-label="The double-quantum magnetic phase is four pi gamma e times the integral of the switching function times the magnetic field">
+            <span>φ<sub>DQ</sub> = 4πγ<sub>e</sub> ∫<sub>0</sub><sup>T</sup> <i>y</i>(<i>t</i>) <i>B</i><sub>ac</sub>(<i>t</i>) d<i>t</i>.</span>
+          </div>
+          <p>The switching function <i>y</i>(<i>t</i>) changes sign under the refocusing operation. When its sign follows the AC field, successive parts of the integral add. Finite pulse duration and control errors affect the actual response, so this expression is a useful idealization for understanding the sequence.</p>
+          <p>Correlation spectroscopy compares two sensing intervals separated by a variable delay. Scanning that delay reveals an oscillation whose Fourier spectrum identifies the field frequency. <a href="#ref-laraoui">Laraoui and colleagues</a> developed this approach for resolving nuclear-spin signals near an NV centre, extending the accessible correlation time beyond a single electron-spin coherence interval.</p>
+          <p>For our external-field measurement, a nearby coil applies an RF magnetic field at 20 MHz. The correlation signal produces a Fourier peak at that frequency. The paper separately reports a feature near 46.3 MHz without an applied RF signal, attributed to hyperfine coupling to nearby nuclear spins; the 20 MHz experiment is the direct test with a deliberately applied field.</p>
+        </section>
+
+        <figure class="post-figure" id="fig-ac">
+          <a href="../assets/figs/hbn-double-quantum-ac-correlation.png" target="_blank" rel="noreferrer" aria-label="Open the 20 MHz AC-field correlation measurement at full size">
+            <img src="../assets/figs/hbn-double-quantum-ac-correlation.png" width="8907" height="3526" loading="lazy" alt="Spin-echo correlation signal versus swept delay on the left, with a Fourier peak at the applied magnetic-field frequency of 20 MHz on the right." />
+          </a>
+          <figcaption>Detecting an externally applied AC magnetic field. The correlation trace (left) gives a peak at 20 MHz in the Fourier spectrum (right). Original correlation-spectroscopy figure from <a href="https://arxiv.org/abs/2611.13447">our paper</a>.</figcaption>
+        </figure>
+
+        <section class="post-prose" aria-labelledby="heterodyne">
+          <h2 id="heterodyne">Qdyne: reading the difference frequency</h2>
+          <p>Quantum heterodyne detection, or Qdyne, repeats a fixed sensing sequence against a stable classical clock. Each block prepares the spin, samples the field, and produces a fluorescence readout. The phase of the field relative to the sequence advances from block to block, leaving a beat pattern in the readout record.</p>
+          <p>This is a difference-frequency measurement. For a signal at <i>f</i><sub>ac</sub> and a timing reference at <i>f</i><sub>ref</sub>, the relevant detuning is δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub>. In the small-signal regime, the phase-sensitive part of the fluorescence follows this relative phase. Fourier analysis of the timed record recovers the beat; the reference and the selected frequency band then connect it to the applied field frequency.</p>
+          <p>The experiments of <a href="#ref-schmitt">Schmitt and colleagues</a> and <a href="#ref-boss">Boss and colleagues</a> established how this clock-referenced measurement can achieve frequency resolution far narrower than the inverse of one spin-coherence time. Each cycle can reinitialize the spin. A stable clock maintains the phase reference across successive readouts.</p>
+          <p>Three timescales have different roles. The sensing window sets the phase collected in each block and the filter response; the repetition period sets the sampling rate and its frequency aliases; the total record length sets the Fourier-bin spacing. Assigning an absolute frequency requires the reference and the appropriate alias band. Clock stability and the signal's own coherence ultimately limit the useful record length.</p>
+          <p>This approach already has an hBN foundation. <a href="#ref-rizzato">Rizzato and colleagues</a> demonstrated RF sensing and coherently averaged synchronized readout (CASR) with V<sub>B</sub><sup>−</sup> ensembles. Our work adds DQ control to this sensing setting and compares its performance directly with SQ control.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="results">
+          <h2 id="results">What improves in the measurement?</h2>
+          <p>Under the same experimental conditions, our Qdyne comparison gives a signal-to-noise ratio of 100 with SQ control and 257 with DQ control. The ratio is 2.57, rounded to 2.6 in the abstract.</p>
+          <table class="dq-results">
+            <caption>Reported Qdyne comparison for an applied 20 MHz RF field.</caption>
+            <thead><tr><th scope="col">Control</th><th scope="col">Signal-to-noise ratio</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Single quantum</th><td>100</td></tr>
+              <tr><th scope="row">Double quantum</th><td>257</td></tr>
+              <tr><th scope="row">DQ / SQ</th><td>2.57</td></tr>
+            </tbody>
+          </table>
+          <p>The phase response, optical contrast, and measured SNR describe different parts of the experiment. The final gain depends on pulse fidelity, ensemble inhomogeneity, photon collection, and noise as well as the chosen coherence. The 2.57-fold result is the measured SNR improvement in this comparison; an absolute sensitivity in T/√Hz would require field calibration and a measurement-time normalization.</p>
+        </section>
+
+        <section class="post-prose" aria-labelledby="next">
+          <h2 id="next">What I would optimize next</h2>
+          <p>The control needs to remain accurate across an ensemble. In NV magnetic microscopy, the <a href="#ref-hart">DQ 4-Ramsey protocol of Hart and colleagues</a> uses phase cycling to reject residual SQ contributions from imperfect pulses. That provides a useful direction for testing how pulse errors enter hBN DQ measurements. Measuring the response across detuning and microwave amplitude would help identify where the contrast and SNR gains survive.</p>
+          <p>The sensing comparison should then be extended to calibrated field amplitudes and matched acquisition times, with the noise floor tracked as the record grows. That would connect the present SNR result to an absolute sensitivity and identify whether microwave control, photon statistics, or long-term drift is the next limitation. DQ control gives us a stronger phase response and an experimentally improved readout; the next task is to preserve those gains through the full measurement.</p>
+        </section>
+
+        <aside class="post-resources dq-references" aria-labelledby="resources-title">
+          <h2 id="resources-title">Papers behind this note</h2>
+          <ul>
+            <li id="ref-ru">S. Ru et al., <a href="https://doi.org/10.1103/hmk5-d2dj">Double-quantum-enhanced coherent control and magnetic sensing of spin defects in hexagonal boron nitride</a>. <em>Physical Review Applied</em>, accepted 9 November 2026. <a href="https://arxiv.org/abs/2611.13447">arXiv:2611.13447</a>.</li>
+            <li id="ref-fang">K. Fang et al., <a href="https://doi.org/10.1103/PhysRevLett.110.130802">High-Sensitivity Magnetometry Based on Quantum Beats in Diamond Nitrogen-Vacancy Centers</a>. <em>Physical Review Letters</em> <strong>110</strong>, 130802 (2013).</li>
+            <li id="ref-mamin">H. J. Mamin et al., <a href="https://doi.org/10.1103/PhysRevLett.113.030803">Multipulse Double-Quantum Magnetometry with Near-Surface Nitrogen-Vacancy Centers</a>. <em>Physical Review Letters</em> <strong>113</strong>, 030803 (2014).</li>
+            <li id="ref-bauch">E. Bauch et al., <a href="https://doi.org/10.1103/PhysRevX.8.031025">Ultralong Dephasing Times in Solid-State Spin Ensembles via Quantum Control</a>. <em>Physical Review X</em> <strong>8</strong>, 031025 (2018).</li>
+            <li id="ref-laraoui">A. Laraoui et al., <a href="https://doi.org/10.1038/ncomms2685">High-resolution correlation spectroscopy of <sup>13</sup>C spins near a nitrogen-vacancy centre in diamond</a>. <em>Nature Communications</em> <strong>4</strong>, 1651 (2013).</li>
+            <li id="ref-schmitt">S. Schmitt et al., <a href="https://doi.org/10.1126/science.aam5532">Submillihertz magnetic spectroscopy performed with a nanoscale quantum sensor</a>. <em>Science</em> <strong>356</strong>, 832–837 (2017).</li>
+            <li id="ref-boss">J. M. Boss et al., <a href="https://doi.org/10.1126/science.aam7009">Quantum sensing with arbitrary frequency resolution</a>. <em>Science</em> <strong>356</strong>, 837–840 (2017).</li>
+            <li id="ref-rizzato">R. Rizzato et al., <a href="https://doi.org/10.1038/s41467-023-40473-w">Extending the coherence of spin defects in hBN enables advanced qubit control and quantum sensing</a>. <em>Nature Communications</em> <strong>14</strong>, 5089 (2023).</li>
+            <li id="ref-hart">C. A. Hart et al., <a href="https://doi.org/10.1103/PhysRevApplied.15.044020">N-V–Diamond Magnetic Microscopy Using a Double Quantum 4-Ramsey Protocol</a>. <em>Physical Review Applied</em> <strong>15</strong>, 044020 (2021).</li>
+          </ul>
+        </aside>
+        <a class="post-back" href="../index.html#blog">← back to the blog</a>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-logout">⟨ψ| logout<span aria-hidden="true">▍</span></p>
+        <p class="footer-end">session ended · solid-state quantum physics, sensing, and information.</p>
+        <p class="footer-links"><a data-mail href="../index.html#contact">email</a> · <a href="https://github.com/harleyru">github</a> · <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&amp;hl=en">scholar</a> · <a href="../Resume_Shihao.pdf">cv</a></p>
+        <p class="copyright">© <span data-year></span> ⟨Ru|SH⟩</p>
+      </div>
+      <a href="#top">↑ top</a>
+    </footer>
+  </body>
+</html>
