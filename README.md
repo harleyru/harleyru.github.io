@@ -38,13 +38,16 @@ visitors don't keep a stale cached copy.
 
 ## Notes
 
-- The October 2026 update lists 27 English-language works across six areas.
+- The November 2026 update lists 28 English-language works across six areas.
   The latest-paper order uses the first online publication or arXiv submission
-  date: Reimpell–Werner (30 September), interlayer excitons (24 September),
-  Quantum-Harbor (15 September), and quantum cryptographic conferencing
-  (9 September). The Nano Letters issue date is 7 October; the PRL issue date
-  is 11 September.
+  date: double-quantum control in hBN (10 November), Reimpell–Werner
+  (30 September), interlayer excitons (24 September), and Quantum-Harbor
+  (15 September). The double-quantum paper was accepted by Physical Review
+  Applied on 9 November and is listed as accepted until volume and article
+  details are assigned. The Nano Letters issue date is 7 October.
 - New publication figures are taken from the papers:
+  - `hbn-double-quantum.png`: original Figure 1 from the
+    [arXiv v1 source](https://arxiv.org/src/2611.13447v1), copied without changes.
   - `reimpell-werner.png`: [Figure 1](https://arxiv.org/html/2609.40203v1/fig1.png).
   - `quantum-harbor.png`: [Figure 1](https://arxiv.org/html/2609.17439v1/fig_intro.png).
   - `quantum-harbor-framework.png`: [Figure 2](https://arxiv.org/html/2609.17439v1/fig_framework.png), used in the blog post.
