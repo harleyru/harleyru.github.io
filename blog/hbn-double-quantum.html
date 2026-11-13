@@ -95,7 +95,7 @@
 
         <section class="post-prose" aria-labelledby="control">
           <h2 id="control">Making DQ coherence in hBN</h2>
-          <p>We drive the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with synchronized microwave tones. By setting their amplitudes, phases, and pulse durations, we prepare coherence between the outer states. After the sensing interval, we map the accumulated phase onto spin populations and read them through spin-dependent fluorescence.</p>
+          <p>We drive the two allowed transitions, |0⟩ ↔ |+1⟩ and |0⟩ ↔ |−1⟩, with synchronized microwave tones. By setting their amplitudes, phases, and pulse durations, we prepare coherence between the outer states. After the sensing interval, we map the accumulated phase onto spin populations and read them out through spin-dependent fluorescence.</p>
           <p>Our instruments share a 10 MHz reference. We control the microwave IQ modulation with an arbitrary waveform generator, combine the two tones, and deliver them through a coplanar waveguide. We use green laser pulses to initialize and read out the defect ensemble in an hBN flake at room temperature.</p>
           <p><a href="#ref-mamin">Mamin and colleagues</a> used dual-frequency DQ control for multipulse magnetometry with near-surface NV centres in diamond. In hBN, we need to maintain control across a broadened ensemble of resonances. We observe about twice the optical readout contrast with DQ driving as with SQ driving. This contrast gain concerns the fluorescence measurement; the factor of two in the ideal magnetic phase response comes from the choice of spin states.</p>
         </section>
@@ -128,9 +128,9 @@
         <section class="post-prose" aria-labelledby="heterodyne">
           <h2 id="heterodyne">Qdyne: reading the difference frequency</h2>
           <p>For quantum heterodyne detection, or Qdyne, we repeat a fixed sensing sequence against a stable classical clock. In each block, we prepare the spin, sample the field, and record the fluorescence. The field phase relative to the sequence advances between blocks, producing a beat in the readout record.</p>
-          <p>We measure the difference frequency δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub> between the AC signal and the timing reference. In the small-signal regime, the phase-sensitive fluorescence follows this relative phase. We extract the beat by Fourier-transforming the timed record, then use the reference and the selected frequency band to recover the field frequency.</p>
+          <p>We measure the difference frequency δ = <i>f</i><sub>ac</sub> − <i>f</i><sub>ref</sub> between the AC signal and the timing reference. In the small-signal regime, the phase-sensitive fluorescence follows the relative phase between the field and the sequence. We extract the beat by Fourier-transforming the timed record, then use the reference and the selected frequency band to recover the field frequency.</p>
           <p><a href="#ref-schmitt">Schmitt and colleagues</a> and <a href="#ref-boss">Boss and colleagues</a> demonstrated frequency resolution far narrower than the inverse of a single spin-coherence time with clock-referenced readout. We can reinitialize the spin in each cycle because the classical clock maintains the phase reference between readouts.</p>
-          <p>The sensing window sets how much phase we collect per block and which frequencies we detect. The repetition period sets the sampling rate and its aliases, while the total record length sets the Fourier-bin spacing. To assign an absolute frequency, we need the reference and the appropriate alias band. Clock stability and the coherence of the signal limit how far we can extend the useful record.</p>
+          <p>The sensing window sets how much phase we collect per block and which frequencies we detect. The repetition period sets the sampling rate and the resulting alias bands, while the total record length sets the Fourier-bin spacing. To assign an absolute frequency, we need the reference and the appropriate alias band. Clock stability and the coherence of the signal limit how far we can extend the useful record.</p>
           <p><a href="#ref-rizzato">Rizzato and colleagues</a> demonstrated RF sensing and coherently averaged synchronized readout (CASR) in hBN V<sub>B</sub><sup>−</sup> ensembles. We build on this sensing approach with DQ control and a comparison against SQ control.</p>
         </section>
 
@@ -151,7 +151,7 @@
 
         <section class="post-prose" aria-labelledby="next">
           <h2 id="next">Improving control across the ensemble</h2>
-          <p>I would first map the contrast and SNR against microwave detuning and amplitude to see how much control error the DQ measurement tolerates. In NV magnetic microscopy, <a href="#ref-hart">Hart and colleagues' DQ 4-Ramsey protocol</a> uses phase cycling to reject residual SQ contributions from imperfect pulses. It offers a starting point for testing similar errors in hBN.</p>
+          <p>I would first map the contrast and SNR against microwave detuning and amplitude to see how much control error the DQ measurement tolerates. In NV magnetic microscopy, <a href="#ref-hart">Hart and colleagues' DQ 4-Ramsey protocol</a> uses phase cycling to reject residual SQ contributions from imperfect pulses. I would test whether similar phase cycling can suppress residual SQ contributions in hBN.</p>
           <p>With calibrated field amplitudes, we could then compare absolute sensitivity at matched acquisition times. Tracking the noise floor over longer records would help us distinguish limitations from microwave control, photon statistics, and drift, and decide which part of the experiment to improve next.</p>
         </section>
 
