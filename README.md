@@ -10,6 +10,7 @@ straight to the `main` branch and served as static files.
 
 - `index.html` — homepage (hero, research, latest papers, blog, projects, contact)
 - `publications.html` — full publication list, grouped by research area
+- `blog.html` — standalone blog index, with published notes listed newest first
 - `blog/quantum-harbor.html` — English research note on verified autonomy in quantum engineering
 - `blog/hbn-double-quantum.html` — English research note on DQ control and AC magnetometry in hBN, with references to earlier DQ, correlation-spectroscopy, and synchronized-readout work
 - `styles.css` — all styling, including the dark theme variables
@@ -23,6 +24,8 @@ straight to the `main` branch and served as static files.
 ## Editing content
 
 - Homepage sections live in `index.html`; each section is a `terminal-section`.
+- Published blog posts are listed in `blog.html`. Keep the homepage's recent
+  previews in sync when adding a post. Draft files are not listed or published.
 - Publications live in `publications.html`, grouped into six categories
   (sensing, matter, photonics, information, metrology, AI engineering). Each category heading has an
   anchor (`#pub-sensing`, …) used by the sidebar and table of contents.

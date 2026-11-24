@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <title>Blog · QuantRu</title>
+    <meta name="description" content="Research notes by Shihao Ru on quantum sensing and AI for quantum engineering." />
+    <meta property="og:title" content="Blog · QuantRu" />
+    <meta property="og:description" content="Research notes on quantum sensing and AI for quantum engineering, by Shihao Ru." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quantru.org/blog.html" />
+    <link rel="canonical" href="https://quantru.org/blog.html" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" />
+    <link rel="stylesheet" href="styles.css?v=20261013-5" />
+    <script src="script.js?v=20261013-5" defer></script>
+    <style>
+      .blog-index .post-header { margin-bottom: 2.5rem; }
+      .blog-year { margin: 0 0 0.8rem; color: var(--muted); font-family: var(--mono); font-size: 0.875rem; font-weight: 500; }
+      .blog-index .blog-preview p { font-size: 1rem; }
+      .blog-index .blog-preview .blog-meta, .blog-index .blog-read { font-size: 0.875rem; }
+      .blog-index .blog-preview + .blog-preview { border-top: 0; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="RuSH Quantum home"><span class="brand-mark"><span class="bk-prompt">❯ </span><span class="bk-br">⟨</span>Ru<span class="bk-bar" aria-hidden="true"></span><span class="bk-sh">SH</span><span class="bk-br">⟩</span><span class="bk-cursor" aria-hidden="true"></span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#research">research</a>
+          <a href="publications.html">publications</a>
+          <a href="blog.html" aria-current="page">blog</a>
+          <a href="index.html#projects">projects</a>
+          <a href="index.html#contact">contact</a>
+          <a href="Resume_Shihao_2026-11-24.pdf" target="_blank" rel="noreferrer">CV ↓</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">dark</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page-shell">
+      <div class="blog-post blog-index">
+        <header class="post-header" id="top">
+          <p class="prompt">⟨ψ| blog</p>
+          <div class="terminal-rule" aria-hidden="true"></div>
+          <h1>Blog</h1>
+          <p class="post-deck">Research notes on quantum sensing and AI for quantum engineering.</p>
+        </header>
+
+        <section aria-labelledby="posts-2026">
+          <h2 class="blog-year" id="posts-2026">2026</h2>
+          <article class="blog-preview" aria-labelledby="post-dq">
+            <div>
+              <p class="blog-meta"><time datetime="2026-11-13">13 Nov 2026</time> · quantum sensing</p>
+              <h3 id="post-dq"><a href="blog/hbn-double-quantum.html">Double-quantum control and AC magnetometry in hBN</a></h3>
+              <p>How two microwave tones enable DQ sensing, from spin-echo correlation to quantum heterodyne readout, with a 2.57-fold signal-to-noise improvement.</p>
+              <a class="blog-read" href="blog/hbn-double-quantum.html" aria-label="Read the hBN double-quantum research note">read the note</a>
+            </div>
+            <a class="blog-preview-image" href="blog/hbn-double-quantum.html" aria-label="Read the hBN double-quantum research note">
+              <img src="assets/figs/hbn-double-quantum.png" width="4398" height="1730" alt="Spin levels and dual-frequency microwave control of boron-vacancy defects in hBN." />
+            </a>
+          </article>
+          <article class="blog-preview" aria-labelledby="post-harbor">
+            <div>
+              <p class="blog-meta"><time datetime="2026-10-13">13 Oct 2026</time> · AI for quantum engineering</p>
+              <h3 id="post-harbor"><a href="blog/quantum-harbor.html">Quantum-Harbor: testing AI agents in a virtual quantum lab</a></h3>
+              <p>How we test AI agents on quantum engineering tasks, check their experimental evidence, and measure what they can reliably complete.</p>
+              <a class="blog-read" href="blog/quantum-harbor.html" aria-label="Read the Quantum-Harbor research note">read the note</a>
+            </div>
+            <a class="blog-preview-image" href="blog/quantum-harbor.html" aria-label="Read the Quantum-Harbor research note">
+              <img src="assets/figs/quantum-harbor.png" width="1134" height="733" loading="lazy" alt="Overview of Quantum-Harbor's virtual quantum laboratory." />
+            </a>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-logout">⟨ψ| logout<span aria-hidden="true">▍</span></p>
+        <p class="footer-end">session ended · solid-state quantum physics, sensing, and information.</p>
+        <p class="footer-links"><a data-mail href="index.html#contact">email</a> · <a href="https://github.com/harleyru">github</a> · <a href="https://scholar.google.com/citations?user=fedZB0MAAAAJ&amp;hl=en">scholar</a> · <a href="Resume_Shihao_2026-11-24.pdf">cv</a></p>
+        <p class="copyright">© <span data-year></span> ⟨Ru|SH⟩</p>
+      </div>
+      <a href="#top">↑ top</a>
+    </footer>
+  </body>
+</html>
