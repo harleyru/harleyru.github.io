@@ -17,7 +17,8 @@ straight to the `main` branch and served as static files.
 - `favicon.svg` — bra-ket logo favicon
 - `assets/figs/` — figures used in publications and blog posts
 - `assets/portraits/shihao-ru.jpg` — supplied personal photo; its homepage crop is controlled by `.portrait-frame` in CSS
-- `Resume_Shihao.pdf` — CV
+- `Resume_Shihao_2026-11-24.pdf` — current CV, linked from all published pages
+- `Resume_Shihao.pdf` — compatibility copy for existing bookmarks
 
 ## Editing content
 
