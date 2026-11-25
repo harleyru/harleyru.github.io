@@ -18,7 +18,8 @@ straight to the `main` branch and served as static files.
 - `favicon.svg` — bra-ket logo favicon
 - `assets/figs/` — figures used in publications and blog posts
 - `assets/portraits/shihao-ru.jpg` — supplied personal photo; its homepage crop is controlled by `.portrait-frame` in CSS
-- `Resume_Shihao_2026-11-24.pdf` — current CV, linked from all published pages
+- `Resume_Shihao_2026-11-25.pdf` — current CV, linked from all published pages
+- `Resume_Shihao_2026-11-24.pdf` — previous CV snapshot
 - `Resume_Shihao.pdf` — compatibility copy for existing bookmarks
 
 ## Editing content
@@ -47,9 +48,9 @@ visitors don't keep a stale cached copy.
   The latest-paper order uses the first online publication or arXiv submission
   date: double-quantum control in hBN (10 November), Reimpell–Werner
   (30 September), interlayer excitons (24 September), and Quantum-Harbor
-  (15 September). The double-quantum paper was accepted by Physical Review
-  Applied on 9 November and is listed as accepted until volume and article
-  details are assigned. The Nano Letters issue date is 7 October.
+  (15 September). The double-quantum paper was published on 24 November as
+  Physical Review Applied 26, 054072 (2026), DOI 10.1103/hmk5-d2dj.
+  The Nano Letters issue date is 7 October.
 - New publication figures are taken from the papers:
   - `hbn-double-quantum.png`: original Figure 1 from the
     [arXiv v1 source](https://arxiv.org/src/2611.13447v1), copied without changes.
